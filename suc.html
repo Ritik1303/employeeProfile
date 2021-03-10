@@ -19,11 +19,36 @@
                     Employee Details
                 </div>
                 <div class="panel-body">
-                        <div id="name">
-                            <span>Name : </span>
+                        <div>
+                            <span>Name : </span><span id="fname"> </span> <span id='lname'></span>
                         </div>
-                        <div id="email">
-                            <span>Email: </span>
+                        <br>
+                        <div>
+                            <span>Email: </span><span id="email"></span>
+                        </div>
+                        <br>
+                        <div>
+                            <span>Contact: </span> <span id="con"></span>
+                        </div>
+                        <br>
+                        <div>
+                            <span>Adhar: </span><span id="adh"></span>
+                        </div>
+                        <br>
+                        <div>
+                            <span>Pan: </span><span id="pan"></span>
+                        </div>
+                        <br>
+                        <div>
+                            <fieldset>
+                                <legend>Address</legend>
+                                <div id="add"></div>
+                                <span id="city"></span>
+                                <span>, </span>
+                                <span id="state"></span>
+                                <span>, </span>
+                                <span id="count"></span>
+                            </fieldset>
                         </div>
                 </div>
             </div>
@@ -41,19 +66,44 @@
         queryDict[item.split("=")[0]] = item.split("=")[1]
     })
     console.log(queryDict)
-    //document.getElementById("write").innerHTML = queryDict.fname;
-    var full = document.getElementById("name");
-    var fname = document.createTextNode(queryDict.fname);
-    var lname = document.createTextNode(queryDict.lname);
-    var space = document.createTextNode(" ")
-    full.appendChild(fname);
-    full.appendChild(space);
-    full.appendChild(lname);
+    document.getElementById("fname").innerHTML = queryDict.fname;
+    document.getElementById("lname").innerHTML = queryDict.lname;
+    var n = queryDict.email.replace("%40", "@");
 
-    var email=document.getElementById("email");
-    var e=document.createTextNode(queryDict.email);
-    email.appendChild(e);
+    document.getElementById("email").innerHTML = n;
 
+    document.getElementById("con").innerHTML = queryDict.mobile;
+    document.getElementById("adh").innerHTML = queryDict.adhar;
+    document.getElementById("pan").innerHTML = queryDict.pan;
+    var n = queryDict.address.split("+");
+    var s="";
+    for(let i=0;i<n.length;i++){
+        s=s+n[i]+" ";
+    }
+    document.getElementById("add").innerHTML = s;
+    console.log(s)
+    document.getElementById("city").innerHTML = queryDict.city;
+    document.getElementById("state").innerHTML = queryDict.state;
+    document.getElementById("count").innerHTML = queryDict.country;
+
+
+
+//     var full = document.getElementById("name");
+//     var fname = document.createTextNode(queryDict.fname);
+//     var lname = document.createTextNode(queryDict.lname);
+//     var space = document.createTextNode(" ")
+//     full.appendChild(fname);
+//     full.appendChild(space);
+//     full.appendChild(lname);
+
+//     var email=document.getElementById("email");
+
+//     var e=document.createTextNode(queryDict.email);
+//     email.appendChild(e);
+
+//    // var contact=document.getElementById("con");
+//     //var m=document.createTextNode(queryDict.mobile);
+//     //contact.appendChild(m);
 
 </script>
 </body>
