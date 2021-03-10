@@ -1,0 +1,12 @@
+.error{
+    	color: red;
+        font-style: italic;
+    }
+#add,#add1{
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 5px;
+    color: grey;
+    font-size: 0.8em;
+    font-weight: bold;
+}

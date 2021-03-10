@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="suc.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Employee Details
+                </div>
+                <div class="panel-body">
+                        <div id="name">
+                            <span>Name : </span>
+                        </div>
+                        <div id="email">
+                            <span>Email: </span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    //document.getElementById("write").innerHTML = window.location.search; // you will have to pars
+    var queryDict = {}
+    location.search.substr(1).split("&").forEach(function (item) {
+        queryDict[item.split("=")[0]] = item.split("=")[1]
+    })
+    console.log(queryDict)
+    //document.getElementById("write").innerHTML = queryDict.fname;
+    var full = document.getElementById("name");
+    var fname = document.createTextNode(queryDict.fname);
+    var lname = document.createTextNode(queryDict.lname);
+    var space = document.createTextNode(" ")
+    full.appendChild(fname);
+    full.appendChild(space);
+    full.appendChild(lname);
+
+    var email=document.getElementById("email");
+    var e=document.createTextNode(queryDict.email);
+    email.appendChild(e);
+
+
+</script>
+</body>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Registration form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Registration
+                </div>
+                <div class="panel-body">
+                    <form id="registration" action="suc.html" method="">
+
+                        <label class="form-label" for="customFile">Select profile picture.</label>
+                        <input type="file" class="form-control" name="pic" id="pic"
+                            placeholder="Upload Profile Picture." />
+                        <br>
+                        <input type="text" class="form-control" id='fname' name="fname" placeholder="First Name" />
+                        <br>
+                        <input type="text" class="form-control" id='lname' name="lname" placeholder="Last Name" />
+                        <br>
+                        <input type="tel" class="form-control" id='mobile' name="mobile" placeholder="Mobile Number">
+                        <br>
+                        <div class="addnew">
+                            <button class="add" id='add'>Add Number</button>
+                        </div>
+                        <br>
+                        <input type="text" class="form-control" id='email' name="email" placeholder="Email" />
+                        <br>
+                        <input type="text" class="form-control" id='adhar' name="adhar" placeholder="Adhar Number" />
+                        <br>
+                        <input type="text" class="form-control" id=' pan' name="pan" placeholder="Pan Number" />
+                        <br>
+                        <div class="gender" id='gender'>
+                            <legend>Gender</legend>
+                            <label class="radio-inline"><input type="radio" name="gender" class="form-contorl"
+                                    value="Male" />Male</label>
+                            <label class="radio-inline"><input type="radio" name="gender" class="form-contorl"
+                                    value="Female" />Female</label>
+                        </div>
+                        <br>
+
+                        <br>
+                        <fieldset>
+                            <legend>Address</legend>
+                            <select class="form-control" name="country" id='country'>
+                                <option selected="" disabled="">--Country--</option>
+                                <option>India</option>
+                                <option>Australia</option>
+                                <option>Japan</option>
+                                <option>China</option>
+                                <option>South Africa</option>
+                            </select>
+                            <br>
+                            <input type="text" class="form-control" id='state' name="state" placeholder="State" />
+                            <br>
+                            <input type="text" class="form-control" id='city' name="city" placeholder="City" />
+                            <br>
+                            <textarea class="form-control" name="address" id='address' placeholder="Address"></textarea>
+                            <br />
+
+                            <div class="addressadd">
+                                <button class="butadd" id="add1">Add Alternative Address</button>
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="btn btn-primary" id="sub" onclick="storedata();">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="register.js"></script>
+</body>
+
+</html>
