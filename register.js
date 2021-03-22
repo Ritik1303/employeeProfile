@@ -1,4 +1,35 @@
 var check = (function () {
+
+    function cap() {
+        let input_val = document.getElementById("input_val");
+        let num1 = document.getElementById("num1");
+        let num2 = document.getElementById("num2");
+        const mybtn = document.getElementById("sub");
+
+        num1.innerText = Math.floor(Math.random() * 10);
+        num2.innerText = Math.floor(Math.random() * 10);
+        let number1 = num1.innerText;
+        let number2 = num2.innerText;
+
+
+
+        let sum_result = parseInt(number1) + parseInt(number2);
+
+        let res = parseInt(input_val.value);
+
+
+        if (res == sum_result) {
+            alert("Captcha answer is correct.");
+            return true;
+
+        } else {
+            alert("Wrong answer. Try again.");
+            return false;
+        }
+
+    }
+
+
     function storedata() {
         var fn = $('#fname').val();
         var ln = $('#lname').val();
@@ -17,11 +48,12 @@ var check = (function () {
         var ct = $('#city').val();
         var ad = $('#address').val();
         var cn = $('#country').val();
-        console.log(st, ct, ad, cn)
+
+        console.log(st, ct, ad, cn, ca)
 
     }
 
-    jQuery.validator.addMethod("noSpace", function (value, element) {
+    jQuery.validator.addMethod("noSpace", function (value, _element) {
         return value == '' || value.trim().length != 0;
     }, "Spaces not allowed.");
 
@@ -158,8 +190,11 @@ var check = (function () {
                 $(wrap1).append('<fieldset><legend>Alternative Address</legend ><select class="form-control" name="country" id="country"><option selected="" disabled="">--Country--</option><option>India</option><option>Australia</option><option>Japan</option> <option>China</option><option>South Africa</option></select><br><input type="text" class="form-control" id="state" name="state" placeholder="State" /><br><input type="text" class="form-control" id="city" name="city" placeholder="City" /><br><textarea class="form-control" name="address" id="address" placeholder="Address"></textarea><br /></fieldset>')
             }
         });
+
     });
+
     return {
-        storedata:storedata,
+        storedata: storedata,
+        cap: cap,
     };
 })();

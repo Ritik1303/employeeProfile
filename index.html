@@ -19,7 +19,7 @@
                     Registration
                 </div>
                 <div class="panel-body">
-                    <form id="registration" action="suc.html" method="GET" enctype="multipart/form-data">
+                    <form id="registration" action="suc.html" method="GET" enctype="multipart/form-data" onsubmit="return check.cap();">
 
                         <label class="form-label" for="customFile">Select profile picture.</label>
                         <input type="file" class="form-control" name="pic" id="pic"
@@ -73,7 +73,10 @@
                                 <button class="butadd" id="add1">Add Alternative Address</button>
                             </div>
                         </fieldset>
-                        <button type="submit" class="btn btn-primary" id="sub" onclick="storedata();">Submit</button>
+                        <p id="operation"><span id="num1">1</span> + <span id="num2">20</span></p>
+                        <input type="text" id="input_val" class="form-control" name="capt">
+                        <br>
+                        <button type="submit" class="btn btn-primary" id="sub" onclick="check.storedata();">Submit</button>
                     </form>
                 </div>
             </div>
