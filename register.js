@@ -1,23 +1,25 @@
 var check = (function () {
+    let num1 = document.getElementById("num1");
+    let num2 = document.getElementById("num2");
+
+
+    num1.innerText = Math.floor(Math.random() * 10);
+    num2.innerText = Math.floor(Math.random() * 10);
 
     function cap() {
-        let input_val = document.getElementById("input_val");
-        let num1 = document.getElementById("num1");
-        let num2 = document.getElementById("num2");
-        const mybtn = document.getElementById("sub");
 
-        num1.innerText = Math.floor(Math.random() * 10);
-        num2.innerText = Math.floor(Math.random() * 10);
+
         let number1 = num1.innerText;
         let number2 = num2.innerText;
 
-
+        let input_val = document.getElementById("input_val");
 
         let sum_result = parseInt(number1) + parseInt(number2);
 
         let res = parseInt(input_val.value);
 
-
+        console.log(res)
+        console.log(sum_result)
         if (res == sum_result) {
             alert("Captcha answer is correct.");
             return true;
@@ -49,7 +51,7 @@ var check = (function () {
         var ad = $('#address').val();
         var cn = $('#country').val();
 
-        console.log(st, ct, ad, cn, ca)
+        console.log(st, ct, ad, cn)
 
     }
 
@@ -187,14 +189,32 @@ var check = (function () {
                 $(ress1).hide();
                 $(add1).hide();
                 x1++;
-                $(wrap1).append('<fieldset><legend>Alternative Address</legend ><select class="form-control" name="country" id="country"><option selected="" disabled="">--Country--</option><option>India</option><option>Australia</option><option>Japan</option> <option>China</option><option>South Africa</option></select><br><input type="text" class="form-control" id="state" name="state" placeholder="State" /><br><input type="text" class="form-control" id="city" name="city" placeholder="City" /><br><textarea class="form-control" name="address" id="address" placeholder="Address"></textarea><br /></fieldset>')
+                $(wrap1).append('<fieldset><legend>Alternative Address</legend ><select class="form-control" name="country" id="country"><option selected="" disabled="">--Country--</option><option>India</option><option>Australia</option><option>Japan</option> <option>China</option><option>South Africa</option></select><br><input type="text" class="form-control" id="state" name="state" placeholder="State" /><br><input type="text" class="form-control" id="city" name="city" placeholder="City" /><br><textarea class="form-control" name="address" id="address" value="ad" placeholder="Address"></textarea><br /></fieldset>')
             }
         });
 
     });
-
+    var sc = {
+        India: ["Jharkhand", "Odisha", "Bihar"],
+        China: ["Anhui Province", "Beijing Municipality", "Hebei Province"],
+        Japan: ["Hokkaido", "Tohoku", "Kanto"],
+        Australia: ["New South Wales", "Queensland", "Victoria"],
+        Germany: ["	Bavaria", "Berlin", "Hamburg"]
+    }
+    function makeSubmenu(value) {
+        if (value.length == 0) document.getElementById("stateSelect").innerHTML = "<option></option>";
+        else {
+            var c = "";
+            for (si in sc[value]) {
+                c += "<option>" + sc[value][si] + "</option>";
+            }
+            document.getElementById("stateSelect").innerHTML = c;
+        }
+    }
+ 
     return {
         storedata: storedata,
         cap: cap,
+        makeSubmenu:makeSubmenu
     };
 })();

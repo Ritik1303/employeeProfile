@@ -19,7 +19,8 @@
                     Registration
                 </div>
                 <div class="panel-body">
-                    <form id="registration" action="suc.html" method="GET" enctype="multipart/form-data" onsubmit="return check.cap();">
+                    <form id="registration" action="suc.html" method="GET" enctype="multipart/form-data"
+                        onsubmit="return check.cap();">
 
                         <label class="form-label" for="customFile">Select profile picture.</label>
                         <input type="file" class="form-control" name="pic" id="pic"
@@ -53,16 +54,21 @@
                         <br>
                         <fieldset>
                             <legend>Address</legend>
-                            <select class="form-control" name="country" id='country'>
-                                <option selected="" disabled="">--Country--</option>
+                            <select id="countrySelect" size="1" onchange="check.makeSubmenu(this.value)" class="form-control"
+                                name="country">
+                                <option value="" disabled selected>Select Country</option>
                                 <option>India</option>
                                 <option>Australia</option>
                                 <option>Japan</option>
                                 <option>China</option>
-                                <option>South Africa</option>
+                                <option>Germany</option>
                             </select>
                             <br>
-                            <input type="text" class="form-control" id='state' name="state" placeholder="State" />
+                            <select id="stateSelect" size="1" class="form-control" name="state">
+                                <option value="" disabled selected>Select State</option>
+                                <option></option>
+                            </select>
+
                             <br>
                             <input type="text" class="form-control" id='city' name="city" placeholder="City" />
                             <br>
@@ -76,7 +82,8 @@
                         <p id="operation"><span id="num1">1</span> + <span id="num2">20</span></p>
                         <input type="text" id="input_val" class="form-control" name="capt">
                         <br>
-                        <button type="submit" class="btn btn-primary" id="sub" onclick="check.storedata();">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="sub"
+                            onclick="check.storedata();">Submit</button>
                     </form>
                 </div>
             </div>
